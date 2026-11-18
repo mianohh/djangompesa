@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block body %}
+<div class="token-page">
+    <div class="container token-shell">
+        <div class="token-card">
+            <div class="token-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+
+            <p class="eyebrow">Daraja API</p>
+            <h1 class="token-title">Access Token</h1>
+            <p class="token-lead">
+                Your M-PESA Daraja access token is ready. Use it to authorize STK push
+                and account balance requests.
+            </p>
+
+            <div class="token-box">
+                <div class="token-box-head">
+                    <span class="token-label">Bearer token</span>
+                    <span class="token-status"><span class="status-dot"></span>Active</span>
+                </div>
+                <code class="token-value">{{ token }}</code>
+            </div>
+
+            <p class="token-note">Keep this token private &mdash; anyone with it can make requests on your behalf.</p>
+
+            <div class="hero-actions">
+                <a href="{% url 'myapp:stk' %}" class="btn primary-btn">Go to Payment</a>
+                <a href="{% url 'myapp:home' %}" class="btn secondary-btn">Back Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
